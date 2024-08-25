@@ -53,16 +53,6 @@ const questions = [
     },
 ]
 
-function promptUser() {
-    inquirer.prompt(questions).then((answers) => {
-        fs.writeFile('README.md', JSON.stringify(answers, null, '\t'), (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    })
-};
-
-promptUser();
-
 // TODO: Create a function to write README file
 function writeToFile(README, data) {
     fs.writeFile(README.md, data, (err) => {
@@ -77,7 +67,15 @@ function writeToFile(README, data) {
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        fs.writeFile('README.md', JSON.stringify(answers, null, '\t'), (err) =>
+         err ? console.log(err) : console.log('Success!')
+        );
+    })
+ 
+}
+
 
 // Function call to initialize app
 init();
