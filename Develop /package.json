@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^10.1.8"
+    "fs": "^0.0.1-security",
+    "inquirer": "^10.1.8",
+    "markdown-it": "^14.1.0"
   }
 }
