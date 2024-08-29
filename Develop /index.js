@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
-//import { generateMarkdown } from './utils/generateMarkdown.js';
+import { generateMarkdown } from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 
@@ -38,11 +38,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'table',
-        message:"What is the table of contents?",
-    },
-    {
-        type: 'input',
         name: 'usage',
         message:"What is the usage?",
     },
@@ -51,6 +46,11 @@ const questions = [
         name: 'credits',
         message:"who worked on this?",
     },
+    {
+        type: 'input',
+        name: 'information',
+        message:"what is your email? and/or github username?",
+    }
 ]
 
 // TODO: Create a function to write README file
