@@ -61,7 +61,7 @@ function generateMarkdown(data) {
   const content = `
   # ${data.projectTitle}
 
-  ${renderLicenseBadge(license)}
+  ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.description}

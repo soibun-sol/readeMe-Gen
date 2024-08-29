@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
-import { generateMarkdown } from './utils/generateMarkdown.js';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 
@@ -47,6 +47,12 @@ const questions = [
         message:"who worked on this?",
     },
     {
+        type: 'list',
+        name: 'license',
+        message:"What license do you want to use?",
+        choices: ['MIT', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla', 'Boost', 'Unlicense', 'Apache', 'None']
+    },
+    {
         type: 'input',
         name: 'information',
         message:"what is your email? and/or github username?",
@@ -54,12 +60,12 @@ const questions = [
 ]
 
 // TODO: Create a function to write README file
-function writeToFile(README, data) {
-    fs.writeFile(README.md, data, (err) => {
+function writeToFile(fileName, content, license) {
+    fs.writeFile(fileName, content, license, (err) => {
         if (err) {
             console.error('Error writing to file:', err);
         } else {
-            console.log(`File ${README.md} has been written successfully!`);
+            console.log(`File README.md has been written successfully!`);
         }
     });
 }
@@ -69,9 +75,10 @@ function writeToFile(README, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        fs.writeFile('README.md', JSON.stringify(answers, null, '\t'), (err) =>
-         err ? console.log(err) : console.log('Success!')
-        );
+        let redMeText = generateMarkdown(answers, answers.license);
+        return redMeText
+    }).then((redMeText) => {
+        writeToFile('README.md', redMeText);
     })
  
 }
