@@ -67,32 +67,22 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Table of Contents
-  - [Motivation](#motivation)
-  - [Build](#build)
-  - [Problem](#problem)
-  - [Learn](#learn)
+  - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Information](#information)
+  - [Contributors](#contributors)
+  - [Tests](#tests)
 
-  ## Motivation
-  ${data.motivation}
-
-  ## Build
-  ${data.build}
-
-  ## Problem
-  ${data.problem}
-
-  ## Learn
-  ${data.learn}
+  ## Installation
+  ${data.installation}
 
   ## Usage
   ${data.usage}
 
-  ## Credits
-  ${data.credits}
+  ## Contributors
+  ${data.contributors}
+
+  ## Tests
+  ${data.tests}
 
   ## License
   ${renderLicenseSection(data.license)}
