@@ -18,23 +18,8 @@ const questions = [
     },
     {
         type: 'input',  
-        name: 'motivation',
-        message:"What was your motivation?",
-    },
-    {
-        type: 'input',
-        name: 'build',
-        message:"Why did you build this project?",
-    },
-    {
-        type: 'input',
-        name: 'problem',
-        message:"What problem does it solve?",
-    },
-    {
-        type: 'input',  
-        name: 'learn',
-        message:"What did you learn?",
+        name: 'installation',
+        message:"how do you install this?",
     },
     {
         type: 'input',
@@ -43,8 +28,13 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'credits',
+        name: 'contributors',
         message:"who worked on this?",
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message:"what tests did you run?",
     },
     {
         type: 'list',
